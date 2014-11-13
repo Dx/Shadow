@@ -20,6 +20,12 @@
 		E11BEF1A1A132A4B00FB774C /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11BEF191A132A4B00FB774C /* MainViewController.swift */; };
 		E11BEF1C1A132B4000FB774C /* SideBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11BEF1B1A132B4000FB774C /* SideBar.swift */; };
 		E11BEF1E1A132B5F00FB774C /* SideBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11BEF1D1A132B5F00FB774C /* SideBarViewController.swift */; };
+		E11BEF251A1491CF00FB774C /* shadowplay_icon_76xa.png in Resources */ = {isa = PBXBuildFile; fileRef = E11BEF211A1491CF00FB774C /* shadowplay_icon_76xa.png */; };
+		E11BEF261A1491CF00FB774C /* shadowplay_icon_120xa.png in Resources */ = {isa = PBXBuildFile; fileRef = E11BEF221A1491CF00FB774C /* shadowplay_icon_120xa.png */; };
+		E11BEF271A1491CF00FB774C /* shadowplay_icon_152xa.png in Resources */ = {isa = PBXBuildFile; fileRef = E11BEF231A1491CF00FB774C /* shadowplay_icon_152xa.png */; };
+		E11BEF281A1491CF00FB774C /* shadowplay_icon_180xa.png in Resources */ = {isa = PBXBuildFile; fileRef = E11BEF241A1491CF00FB774C /* shadowplay_icon_180xa.png */; };
+		E11BEF2C1A14954D00FB774C /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11BEF2B1A14954D00FB774C /* CollectionViewCell.swift */; };
+		E11BEF2E1A1496F100FB774C /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11BEF2D1A1496F100FB774C /* CollectionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +78,14 @@
 		E11BEF191A132A4B00FB774C /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		E11BEF1B1A132B4000FB774C /* SideBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideBar.swift; sourceTree = "<group>"; };
 		E11BEF1D1A132B5F00FB774C /* SideBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideBarViewController.swift; sourceTree = "<group>"; };
+		E11BEF1F1A148E2300FB774C /* ShadowExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = ShadowExtension.entitlements; sourceTree = "<group>"; };
+		E11BEF201A148EEB00FB774C /* Shadow.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Shadow.entitlements; sourceTree = "<group>"; };
+		E11BEF211A1491CF00FB774C /* shadowplay_icon_76xa.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shadowplay_icon_76xa.png; sourceTree = "<group>"; };
+		E11BEF221A1491CF00FB774C /* shadowplay_icon_120xa.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shadowplay_icon_120xa.png; sourceTree = "<group>"; };
+		E11BEF231A1491CF00FB774C /* shadowplay_icon_152xa.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shadowplay_icon_152xa.png; sourceTree = "<group>"; };
+		E11BEF241A1491CF00FB774C /* shadowplay_icon_180xa.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shadowplay_icon_180xa.png; sourceTree = "<group>"; };
+		E11BEF2B1A14954D00FB774C /* CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		E11BEF2D1A1496F100FB774C /* CollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,15 +136,18 @@
 		E11BEEE11A12CA4300FB774C /* Shadow */ = {
 			isa = PBXGroup;
 			children = (
+				E11BEEE81A12CA4300FB774C /* Main.storyboard */,
+				E11BEF201A148EEB00FB774C /* Shadow.entitlements */,
 				E11BEEE41A12CA4300FB774C /* AppDelegate.swift */,
 				E11BEEE61A12CA4300FB774C /* ViewController.swift */,
-				E11BEEE81A12CA4300FB774C /* Main.storyboard */,
 				E11BEEEB1A12CA4300FB774C /* Images.xcassets */,
 				E11BEEED1A12CA4300FB774C /* LaunchScreen.xib */,
 				E11BEEE21A12CA4300FB774C /* Supporting Files */,
 				E11BEF191A132A4B00FB774C /* MainViewController.swift */,
 				E11BEF1B1A132B4000FB774C /* SideBar.swift */,
 				E11BEF1D1A132B5F00FB774C /* SideBarViewController.swift */,
+				E11BEF2B1A14954D00FB774C /* CollectionViewCell.swift */,
+				E11BEF2D1A1496F100FB774C /* CollectionViewController.swift */,
 			);
 			path = Shadow;
 			sourceTree = "<group>";
@@ -138,6 +155,10 @@
 		E11BEEE21A12CA4300FB774C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				E11BEF211A1491CF00FB774C /* shadowplay_icon_76xa.png */,
+				E11BEF221A1491CF00FB774C /* shadowplay_icon_120xa.png */,
+				E11BEF231A1491CF00FB774C /* shadowplay_icon_152xa.png */,
+				E11BEF241A1491CF00FB774C /* shadowplay_icon_180xa.png */,
 				E11BEEE31A12CA4300FB774C /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -163,6 +184,7 @@
 		E11BEF091A12CAF100FB774C /* ShadowExtension */ = {
 			isa = PBXGroup;
 			children = (
+				E11BEF1F1A148E2300FB774C /* ShadowExtension.entitlements */,
 				E11BEF0C1A12CAF100FB774C /* ShareViewController.swift */,
 				E11BEF0E1A12CAF100FB774C /* MainInterface.storyboard */,
 				E11BEF0A1A12CAF100FB774C /* Supporting Files */,
@@ -247,6 +269,12 @@
 				TargetAttributes = {
 					E11BEEDE1A12CA4300FB774C = {
 						CreatedOnToolsVersion = 6.1;
+						DevelopmentTeam = J42N2J85M6;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					E11BEEF31A12CA4300FB774C = {
 						CreatedOnToolsVersion = 6.1;
@@ -254,6 +282,12 @@
 					};
 					E11BEF071A12CAF100FB774C = {
 						CreatedOnToolsVersion = 6.1;
+						DevelopmentTeam = J42N2J85M6;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -282,8 +316,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E11BEF271A1491CF00FB774C /* shadowplay_icon_152xa.png in Resources */,
+				E11BEF251A1491CF00FB774C /* shadowplay_icon_76xa.png in Resources */,
 				E11BEEEA1A12CA4300FB774C /* Main.storyboard in Resources */,
 				E11BEEEF1A12CA4300FB774C /* LaunchScreen.xib in Resources */,
+				E11BEF281A1491CF00FB774C /* shadowplay_icon_180xa.png in Resources */,
+				E11BEF261A1491CF00FB774C /* shadowplay_icon_120xa.png in Resources */,
 				E11BEEEC1A12CA4300FB774C /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -312,7 +350,9 @@
 			files = (
 				E11BEF1A1A132A4B00FB774C /* MainViewController.swift in Sources */,
 				E11BEEE71A12CA4300FB774C /* ViewController.swift in Sources */,
+				E11BEF2C1A14954D00FB774C /* CollectionViewCell.swift in Sources */,
 				E11BEF1E1A132B5F00FB774C /* SideBarViewController.swift in Sources */,
+				E11BEF2E1A1496F100FB774C /* CollectionViewController.swift in Sources */,
 				E11BEF1C1A132B4000FB774C /* SideBar.swift in Sources */,
 				E11BEEE51A12CA4300FB774C /* AppDelegate.swift in Sources */,
 			);
@@ -453,10 +493,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Shadow/Shadow.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = Shadow/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -464,10 +508,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Shadow/Shadow.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = Shadow/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
@@ -508,6 +556,9 @@
 		E11BEF141A12CAF100FB774C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = ShadowExtension/ShadowExtension.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -515,6 +566,7 @@
 				INFOPLIST_FILE = ShadowExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
@@ -522,9 +574,13 @@
 		E11BEF151A12CAF100FB774C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = ShadowExtension/ShadowExtension.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = ShadowExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
 			};
 			name = Release;

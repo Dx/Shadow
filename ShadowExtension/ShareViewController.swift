@@ -15,19 +15,13 @@ class ShareViewController: SLComposeServiceViewController, AudienceSelectionView
     var imageData: NSData?
     
     override func isContentValid() -> Bool {
-        if let data = imageData{
-            if contentText.utf16Count > 0{
-                return true
-            }
-        }
-        
-        return false
+        return true
     }
     
     override func presentationAnimationDidFinish() {
         super.presentationAnimationDidFinish()
         
-        placeholder = "Send to SecThis"
+        placeholder = "Send to Shadow"
         
         let content = extensionContext?.inputItems[0] as NSExtensionItem
         let contentType = kUTTypeImage as NSString
@@ -77,7 +71,7 @@ class ShareViewController: SLComposeServiceViewController, AudienceSelectionView
             println("Could not find the Documents folder")
         }
         
-        imageData?.writeToURL(documentsFolder, atomically: true)
+        imageData?.writeToFile(documentsFolder.absoluteString! + "imagen1.jpg", atomically: true)
         
         self.extensionContext!.completeRequestReturningItems([], completionHandler: nil)
     }
