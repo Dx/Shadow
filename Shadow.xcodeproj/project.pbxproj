@@ -13,6 +13,13 @@
 		E11BEEEC1A12CA4300FB774C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E11BEEEB1A12CA4300FB774C /* Images.xcassets */; };
 		E11BEEEF1A12CA4300FB774C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E11BEEED1A12CA4300FB774C /* LaunchScreen.xib */; };
 		E11BEEFB1A12CA4300FB774C /* ShadowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11BEEFA1A12CA4300FB774C /* ShadowTests.swift */; };
+		E11BEF0D1A12CAF100FB774C /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11BEF0C1A12CAF100FB774C /* ShareViewController.swift */; };
+		E11BEF0F1A12CAF100FB774C /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E11BEF0E1A12CAF100FB774C /* MainInterface.storyboard */; };
+		E11BEF121A12CAF100FB774C /* ShadowExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = E11BEF081A12CAF100FB774C /* ShadowExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		E11BEF181A1328FD00FB774C /* AudienceSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11BEF171A1328FD00FB774C /* AudienceSelectionViewController.swift */; };
+		E11BEF1A1A132A4B00FB774C /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11BEF191A132A4B00FB774C /* MainViewController.swift */; };
+		E11BEF1C1A132B4000FB774C /* SideBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11BEF1B1A132B4000FB774C /* SideBar.swift */; };
+		E11BEF1E1A132B5F00FB774C /* SideBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11BEF1D1A132B5F00FB774C /* SideBarViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -23,7 +30,28 @@
 			remoteGlobalIDString = E11BEEDE1A12CA4300FB774C;
 			remoteInfo = Shadow;
 		};
+		E11BEF101A12CAF100FB774C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E11BEED71A12CA4300FB774C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E11BEF071A12CAF100FB774C;
+			remoteInfo = ShadowExtension;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		E11BEF161A12CAF100FB774C /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				E11BEF121A12CAF100FB774C /* ShadowExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		E11BEEDF1A12CA4300FB774C /* Shadow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Shadow.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -36,6 +64,14 @@
 		E11BEEF41A12CA4300FB774C /* ShadowTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ShadowTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E11BEEF91A12CA4300FB774C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E11BEEFA1A12CA4300FB774C /* ShadowTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowTests.swift; sourceTree = "<group>"; };
+		E11BEF081A12CAF100FB774C /* ShadowExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ShadowExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		E11BEF0B1A12CAF100FB774C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E11BEF0C1A12CAF100FB774C /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
+		E11BEF0E1A12CAF100FB774C /* MainInterface.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainInterface.storyboard; sourceTree = "<group>"; };
+		E11BEF171A1328FD00FB774C /* AudienceSelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudienceSelectionViewController.swift; sourceTree = "<group>"; };
+		E11BEF191A132A4B00FB774C /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		E11BEF1B1A132B4000FB774C /* SideBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideBar.swift; sourceTree = "<group>"; };
+		E11BEF1D1A132B5F00FB774C /* SideBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideBarViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +89,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E11BEF051A12CAF100FB774C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -61,6 +104,7 @@
 			children = (
 				E11BEEE11A12CA4300FB774C /* Shadow */,
 				E11BEEF71A12CA4300FB774C /* ShadowTests */,
+				E11BEF091A12CAF100FB774C /* ShadowExtension */,
 				E11BEEE01A12CA4300FB774C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -70,6 +114,7 @@
 			children = (
 				E11BEEDF1A12CA4300FB774C /* Shadow.app */,
 				E11BEEF41A12CA4300FB774C /* ShadowTests.xctest */,
+				E11BEF081A12CAF100FB774C /* ShadowExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -83,6 +128,9 @@
 				E11BEEEB1A12CA4300FB774C /* Images.xcassets */,
 				E11BEEED1A12CA4300FB774C /* LaunchScreen.xib */,
 				E11BEEE21A12CA4300FB774C /* Supporting Files */,
+				E11BEF191A132A4B00FB774C /* MainViewController.swift */,
+				E11BEF1B1A132B4000FB774C /* SideBar.swift */,
+				E11BEF1D1A132B5F00FB774C /* SideBarViewController.swift */,
 			);
 			path = Shadow;
 			sourceTree = "<group>";
@@ -112,6 +160,25 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		E11BEF091A12CAF100FB774C /* ShadowExtension */ = {
+			isa = PBXGroup;
+			children = (
+				E11BEF0C1A12CAF100FB774C /* ShareViewController.swift */,
+				E11BEF0E1A12CAF100FB774C /* MainInterface.storyboard */,
+				E11BEF0A1A12CAF100FB774C /* Supporting Files */,
+				E11BEF171A1328FD00FB774C /* AudienceSelectionViewController.swift */,
+			);
+			path = ShadowExtension;
+			sourceTree = "<group>";
+		};
+		E11BEF0A1A12CAF100FB774C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E11BEF0B1A12CAF100FB774C /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -122,10 +189,12 @@
 				E11BEEDB1A12CA4300FB774C /* Sources */,
 				E11BEEDC1A12CA4300FB774C /* Frameworks */,
 				E11BEEDD1A12CA4300FB774C /* Resources */,
+				E11BEF161A12CAF100FB774C /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				E11BEF111A12CAF100FB774C /* PBXTargetDependency */,
 			);
 			name = Shadow;
 			productName = Shadow;
@@ -150,6 +219,23 @@
 			productReference = E11BEEF41A12CA4300FB774C /* ShadowTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		E11BEF071A12CAF100FB774C /* ShadowExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E11BEF131A12CAF100FB774C /* Build configuration list for PBXNativeTarget "ShadowExtension" */;
+			buildPhases = (
+				E11BEF041A12CAF100FB774C /* Sources */,
+				E11BEF051A12CAF100FB774C /* Frameworks */,
+				E11BEF061A12CAF100FB774C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ShadowExtension;
+			productName = ShadowExtension;
+			productReference = E11BEF081A12CAF100FB774C /* ShadowExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -165,6 +251,9 @@
 					E11BEEF31A12CA4300FB774C = {
 						CreatedOnToolsVersion = 6.1;
 						TestTargetID = E11BEEDE1A12CA4300FB774C;
+					};
+					E11BEF071A12CAF100FB774C = {
+						CreatedOnToolsVersion = 6.1;
 					};
 				};
 			};
@@ -183,6 +272,7 @@
 			targets = (
 				E11BEEDE1A12CA4300FB774C /* Shadow */,
 				E11BEEF31A12CA4300FB774C /* ShadowTests */,
+				E11BEF071A12CAF100FB774C /* ShadowExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -205,6 +295,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E11BEF061A12CAF100FB774C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E11BEF0F1A12CAF100FB774C /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -212,7 +310,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E11BEF1A1A132A4B00FB774C /* MainViewController.swift in Sources */,
 				E11BEEE71A12CA4300FB774C /* ViewController.swift in Sources */,
+				E11BEF1E1A132B5F00FB774C /* SideBarViewController.swift in Sources */,
+				E11BEF1C1A132B4000FB774C /* SideBar.swift in Sources */,
 				E11BEEE51A12CA4300FB774C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -225,6 +326,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E11BEF041A12CAF100FB774C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E11BEF0D1A12CAF100FB774C /* ShareViewController.swift in Sources */,
+				E11BEF181A1328FD00FB774C /* AudienceSelectionViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -232,6 +342,11 @@
 			isa = PBXTargetDependency;
 			target = E11BEEDE1A12CA4300FB774C /* Shadow */;
 			targetProxy = E11BEEF51A12CA4300FB774C /* PBXContainerItemProxy */;
+		};
+		E11BEF111A12CAF100FB774C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E11BEF071A12CAF100FB774C /* ShadowExtension */;
+			targetProxy = E11BEF101A12CAF100FB774C /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -338,6 +453,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = Shadow/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -348,6 +464,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = Shadow/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -388,6 +505,30 @@
 			};
 			name = Release;
 		};
+		E11BEF141A12CAF100FB774C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = ShadowExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		E11BEF151A12CAF100FB774C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = ShadowExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -413,6 +554,14 @@
 			buildConfigurations = (
 				E11BEF021A12CA4300FB774C /* Debug */,
 				E11BEF031A12CA4300FB774C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		E11BEF131A12CAF100FB774C /* Build configuration list for PBXNativeTarget "ShadowExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E11BEF141A12CAF100FB774C /* Debug */,
+				E11BEF151A12CAF100FB774C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};

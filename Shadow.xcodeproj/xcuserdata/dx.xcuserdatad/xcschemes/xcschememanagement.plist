@@ -9,6 +9,11 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>ShadowExtension.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
@@ -18,6 +23,11 @@
 			<true/>
 		</dict>
 		<key>E11BEEF31A12CA4300FB774C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E11BEF071A12CAF100FB774C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
