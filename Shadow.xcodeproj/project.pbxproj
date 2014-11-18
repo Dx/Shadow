@@ -500,7 +500,7 @@
 				INFOPLIST_FILE = Shadow/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "369dfe63-93f5-4ec7-bc3d-e7e6fdc6ee33";
 			};
 			name = Debug;
 		};
@@ -515,7 +515,7 @@
 				INFOPLIST_FILE = Shadow/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "369dfe63-93f5-4ec7-bc3d-e7e6fdc6ee33";
 			};
 			name = Release;
 		};
@@ -604,6 +604,7 @@
 				E11BEF001A12CA4300FB774C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E11BEF011A12CA4300FB774C /* Build configuration list for PBXNativeTarget "ShadowTests" */ = {
 			isa = XCConfigurationList;
@@ -612,6 +613,7 @@
 				E11BEF031A12CA4300FB774C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E11BEF131A12CAF100FB774C /* Build configuration list for PBXNativeTarget "ShadowExtension" */ = {
 			isa = XCConfigurationList;
@@ -620,6 +622,7 @@
 				E11BEF151A12CAF100FB774C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

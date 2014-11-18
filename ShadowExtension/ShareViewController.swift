@@ -58,20 +58,22 @@ class ShareViewController: SLComposeServiceViewController, AudienceSelectionView
     
     
     override func didSelectPost() {
+        var error: NSError? = nil
+        let fileManager = NSFileManager.defaultManager()
         
-        let fileManager = NSFileManager()
-        var documentsFolder = NSURL()
+        let containerURL = fileManager.containerURLForSecurityApplicationGroupIdentifier("group.palmera.shadow")!.URLByAppendingPathComponent("ShadowMedia")
         
-        let urls = fileManager.URLsForDirectory(NSSearchPathDirectory.DocumentDirectory, inDomains: NSSearchPathDomainMask.UserDomainMask) as [NSURL]
+        let fileURL = containerURL.URLByAppendingPathComponent("file", isDirectory: false).URLByAppendingPathExtension("jpg")
         
-        if urls.count > 0 {
-            documentsFolder = urls[0]
-            println("\(documentsFolder)")
-        } else {
-            println("Could not find the Documents folder")
+        if fileManager.createDirectoryAtURL(containerURL, withIntermediateDirectories: true, attributes: nil, error:&error) {
+            imageData?.writeToURL(fileURL, atomically: true)
         }
         
-        imageData?.writeToFile(documentsFolder.absoluteString! + "imagen1.jpg", atomically: true)
+//        var result = fileManager.contentsOfDirectoryAtURL(containerURL, includingPropertiesForKeys: nil, options: NSDirectoryEnumerationOptions.allZeros, error: &error)
+
+        var result = fileManager.contentsOfDirectoryAtPath(containerURL.path!, error: &error)
+        
+        var foto = fileManager.contentsAtPath(fileURL.path!)
         
         self.extensionContext!.completeRequestReturningItems([], completionHandler: nil)
     }
@@ -100,5 +102,4 @@ class ShareViewController: SLComposeServiceViewController, AudienceSelectionView
             audienceConfigurationItem.value = selectedValue
             popConfigurationViewController()
     }
-    
 }

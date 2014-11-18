@@ -7,10 +7,12 @@
 //
 
 import UIKit
+import MobileCoreServices
 
 class CollectionViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
     
     @IBOutlet var collectionView: UICollectionView?
+    var beenHereBefore = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,7 +54,12 @@ class CollectionViewController: UIViewController, UICollectionViewDelegateFlowLa
     func contentsOfDirectoryAtPath(path: String) -> ([NSString]?) {
         var error: NSError? = nil
         let fileManager = NSFileManager.defaultManager()
+        
         let contents = fileManager.contentsOfDirectoryAtPath(path, error: &error)
+        
+//        var contents = fileManager.contentsOfDirectoryAtURL(containerURL, includingPropertiesForKeys: nil, options: NSDirectoryEnumerationOptions.allZeros, error: &error)
+
+        
         if contents != nil {
             let filenames = contents as [NSString]
             return filenames
@@ -63,25 +70,35 @@ class CollectionViewController: UIViewController, UICollectionViewDelegateFlowLa
 
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+
+        let fileManager = NSFileManager.defaultManager()
         
-        let documentsPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
+        let containerURL = fileManager.containerURLForSecurityApplicationGroupIdentifier("group.palmera.shadow")!.URLByAppendingPathComponent("ShadowMedia")
         
-        let appBundleContents = contentsOfDirectoryAtPath(documentsPath)
+        let documentsPath = containerURL.path
+        
+        fileManager.createDirectoryAtURL(containerURL, withIntermediateDirectories: true, attributes: nil, error:nil)
+        let appBundleContents = contentsOfDirectoryAtPath(documentsPath!)
+        
         
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("CollectionViewCell", forIndexPath: indexPath) as CollectionViewCell
         
-        if let contents = appBundleContents as [NSString]! {
-            for url in contents {
+//        if let contents = appBundleContents as [NSString]! {
+//            for url in contents {
+        
+                var suma = 1 + 1
 
-                let cell = collectionView.dequeueReusableCellWithReuseIdentifier("CollectionViewCell", forIndexPath: indexPath) as  CollectionViewCell
                 cell.backgroundColor = UIColor.blackColor()
                 cell.textLabel?.text = "\(indexPath.section):\(indexPath.row)"
+        
+                let fileURL = containerURL.URLByAppendingPathComponent("file", isDirectory: false).URLByAppendingPathExtension("jpg")
+        
+                var data = fileManager.contentsAtPath(fileURL.path!)
             
-                var data = NSData(contentsOfURL: NSURL.fileURLWithPath(documentsPath + "/" + url)!)
+//                var data = NSData(contentsOfURL: NSURL.fileURLWithPath(documentsPath! + "/" + url)!)
                 cell.imageView?.image = UIImage(data: data!)
-            
-            }
-        }
+//            }
+//        }
         
         return cell
     }
@@ -91,6 +108,62 @@ class CollectionViewController: UIViewController, UICollectionViewDelegateFlowLa
         // Dispose of any resources that can be recreated.
     }
     
+    func isCameraAvailable() -> Bool{
+        var result = UIImagePickerController.isSourceTypeAvailable(.Camera)
+        return result
+    }
     
+    func cameraSupportsMedia(mediaType: String,
+        sourceType: UIImagePickerControllerSourceType) -> Bool{
+            
+            let availableMediaTypes =
+            UIImagePickerController.availableMediaTypesForSourceType(sourceType) as
+                [String]?
+            
+            if let types = availableMediaTypes{
+                for type in types{
+                    if type == mediaType{
+                        return true
+                    }
+                }
+            }
+            
+            return false
+    }
+    
+    func doesCameraSupportTakingPhotos() -> Bool{
+        var result = cameraSupportsMedia(kUTTypeImage as NSString, sourceType: .Camera)
+        return result
+    }
+    
+    @IBAction func takePic(sender : AnyObject) {
+//        if beenHereBefore{
+//            /* Only display the picker once as the viewDidAppear: method gets
+//            called whenever the view of our view controller gets displayed */
+//            return;
+//        } else {
+//            beenHereBefore = true
+//        }
+//        
+//        if isCameraAvailable() && doesCameraSupportTakingPhotos(){
+//            
+//            controller = UIImagePickerController()
+//            
+//            if let theController = controller{
+//                theController.sourceType = .Camera
+//                
+//                theController.mediaTypes = [kUTTypeImage as NSString]
+//                
+//                theController.allowsEditing = true
+//                theController.delegate = self
+//                
+//                presentViewController(theController, animated: true, completion: nil)
+//            }
+//            
+//        } else {
+//            println("Camera is not available")
+//        }
+    }
+
 }
 

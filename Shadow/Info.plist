@@ -38,6 +38,8 @@
 	</array>
 	<key>LSApplicationCategoryType</key>
 	<string></string>
+	<key>RequestsOpenAccess</key>
+	<true/>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
