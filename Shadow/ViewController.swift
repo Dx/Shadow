@@ -19,17 +19,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    
-    @IBAction func testTouchID(sender : AnyObject) {
-        
+
         // Create an alert
         var alert = UIAlertController(title: "", message: "", preferredStyle: UIAlertControllerStyle.Alert)
         // Add the cancel button to the alert
@@ -98,6 +88,12 @@ class ViewController: UIViewController {
             // Show the alert
             self.presentViewController(alert, animated: true, completion: nil)
         }
-    }    
+        
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
 }
 

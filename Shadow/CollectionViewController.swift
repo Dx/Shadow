@@ -9,13 +9,14 @@
 import UIKit
 import MobileCoreServices
 
-class CollectionViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
+class CollectionViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource, UICollectionViewDelegate {
     
     @IBOutlet var collectionView: UICollectionView?
     var beenHereBefore = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         // Do any additional setup after loading the view, typically from a nib.
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsets(top: 20, left: 10, bottom: 10, right: 10)
@@ -26,6 +27,8 @@ class CollectionViewController: UIViewController, UICollectionViewDelegateFlowLa
         collectionView!.registerClass(CollectionViewCell.self, forCellWithReuseIdentifier: "CollectionViewCell")
         collectionView!.backgroundColor = UIColor.whiteColor()
         self.view.addSubview(collectionView!)
+        
+        self.collectionView?.delegate = self
     }
     
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
@@ -34,6 +37,13 @@ class CollectionViewController: UIViewController, UICollectionViewDelegateFlowLa
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return getElementCount(getPath())
+    }
+    
+    func collectionView(collectionView: UICollectionView,
+        didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        
+        
+            
     }
     
     func getElementCount(path: String) -> Int {
@@ -94,6 +104,8 @@ class CollectionViewController: UIViewController, UICollectionViewDelegateFlowLa
         
         return cell
     }
+    
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
