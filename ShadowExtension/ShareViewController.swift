@@ -19,6 +19,7 @@ class ShareViewController: SLComposeServiceViewController, AudienceSelectionView
     }
     
     override func presentationAnimationDidFinish() {
+        
         super.presentationAnimationDidFinish()
         
         placeholder = "Send to Shadow"
@@ -39,14 +40,16 @@ class ShareViewController: SLComposeServiceViewController, AudienceSelectionView
                     attachment.loadItemForTypeIdentifier(contentType,
                         options: nil,
                         completionHandler: {(content: NSSecureCoding!, error: NSError!) in
-                            if let data = content as? NSData{
+                            if let url = content as? NSURL{
                                 dispatch_async(dispatch_get_main_queue(), {
+                                    
+                                    var data = NSData(contentsOfURL: url)
+
                                     strongSelf.imageData = data
                                     strongSelf.validateContent()
                                 })
                             }
                     })
-                    
                 })
             }
             
