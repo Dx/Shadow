@@ -66,19 +66,54 @@ class ShareViewController: SLComposeServiceViewController, AudienceSelectionView
         
         let containerURL = fileManager.containerURLForSecurityApplicationGroupIdentifier("group.palmera.shadow")!.URLByAppendingPathComponent("ShadowMedia")
         
-        let fileURL = containerURL.URLByAppendingPathComponent("file", isDirectory: false).URLByAppendingPathExtension("jpg")
+        let photoName = String(getElementCount(getPath()) + 1)
+        
+        let fileURL = containerURL.URLByAppendingPathComponent(photoName, isDirectory: false).URLByAppendingPathExtension("jpg")
         
         if fileManager.createDirectoryAtURL(containerURL, withIntermediateDirectories: true, attributes: nil, error:&error) {
             imageData?.writeToURL(fileURL, atomically: true)
         }
         
-//        var result = fileManager.contentsOfDirectoryAtURL(containerURL, includingPropertiesForKeys: nil, options: NSDirectoryEnumerationOptions.allZeros, error: &error)
-
         var result = fileManager.contentsOfDirectoryAtPath(containerURL.path!, error: &error)
         
         var foto = fileManager.contentsAtPath(fileURL.path!)
         
         self.extensionContext!.completeRequestReturningItems([], completionHandler: nil)
+    }
+    
+    func getElementCount(path: String) -> Int {
+        var count = contentsOfDirectoryAtPath(path)?.count
+        if count > 0 {
+            return count!
+        }
+        else {
+            return 0
+        }
+    }
+    
+    func contentsOfDirectoryAtPath(path: String) -> ([NSString]?) {
+        var error: NSError? = nil
+        let fileManager = NSFileManager.defaultManager()
+        
+        let contents = fileManager.contentsOfDirectoryAtPath(path, error: &error)
+        
+        if contents != nil {
+            let filenames = contents as [NSString]
+            return filenames
+        } else {
+            return nil
+        }
+    }
+    
+    func getPath() -> NSString {
+        
+        let fileManager = NSFileManager.defaultManager()
+        
+        let containerURL = fileManager.containerURLForSecurityApplicationGroupIdentifier("group.palmera.shadow")!.URLByAppendingPathComponent("ShadowMedia")
+        
+        fileManager.createDirectoryAtURL(containerURL, withIntermediateDirectories: true, attributes: nil, error:nil)
+        
+        return containerURL.path!
     }
     
     lazy var audienceConfigurationItem: SLComposeSheetConfigurationItem = {

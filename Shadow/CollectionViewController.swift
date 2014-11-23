@@ -33,32 +33,24 @@ class CollectionViewController: UIViewController, UICollectionViewDelegateFlowLa
     }
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 20
+        return getElementCount(getPath())
     }
     
-//    func contentsOfAppBundle() -> (filenames:[String]?) {
-//        
-//        var error : NSError? = nil
-//        let fileManager = NSFileManager.defaultManager()
-//        let documentsPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
-//        
-//        let result = fileManager.contentsOfDirectoryAtPath(documentsPath, error: &error)
-//        
-//        if let theError = error{
-//            println("An error occurred")
-//        }
-//        
-//        return result
-//    }
+    func getElementCount(path: String) -> Int {
+        var count = contentsOfDirectoryAtPath(path)?.count
+        if count > 0 {
+            return count!
+        }
+        else {
+            return 0
+        }
+    }
     
     func contentsOfDirectoryAtPath(path: String) -> ([NSString]?) {
         var error: NSError? = nil
         let fileManager = NSFileManager.defaultManager()
         
         let contents = fileManager.contentsOfDirectoryAtPath(path, error: &error)
-        
-//        var contents = fileManager.contentsOfDirectoryAtURL(containerURL, includingPropertiesForKeys: nil, options: NSDirectoryEnumerationOptions.allZeros, error: &error)
-
         
         if contents != nil {
             let filenames = contents as [NSString]
@@ -67,38 +59,38 @@ class CollectionViewController: UIViewController, UICollectionViewDelegateFlowLa
             return nil
         }
     }
-
     
-    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-
+    func getPath() -> NSString {
+        
         let fileManager = NSFileManager.defaultManager()
         
         let containerURL = fileManager.containerURLForSecurityApplicationGroupIdentifier("group.palmera.shadow")!.URLByAppendingPathComponent("ShadowMedia")
         
-        let documentsPath = containerURL.path
-        
         fileManager.createDirectoryAtURL(containerURL, withIntermediateDirectories: true, attributes: nil, error:nil)
-        let appBundleContents = contentsOfDirectoryAtPath(documentsPath!)
+        
+        return containerURL.path!
+    }
+    
+
+    
+    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        
+        let documentsPath = getPath()
+        
+
+        let appBundleContents = contentsOfDirectoryAtPath(documentsPath)
         
         
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("CollectionViewCell", forIndexPath: indexPath) as CollectionViewCell
         
-//        if let contents = appBundleContents as [NSString]! {
-//            for url in contents {
-        
-                var suma = 1 + 1
-
-                cell.backgroundColor = UIColor.blackColor()
-                cell.textLabel?.text = "\(indexPath.section):\(indexPath.row)"
-        
-                let fileURL = containerURL.URLByAppendingPathComponent("file", isDirectory: false).URLByAppendingPathExtension("jpg")
-        
-                var data = fileManager.contentsAtPath(fileURL.path!)
-            
-//                var data = NSData(contentsOfURL: NSURL.fileURLWithPath(documentsPath! + "/" + url)!)
-                cell.imageView?.image = UIImage(data: data!)
-//            }
-//        }
+        if let contents = appBundleContents as [NSString]! {
+            let url = contents[indexPath.row]
+            cell.backgroundColor = UIColor.blackColor()
+            cell.textLabel?.text = "\(indexPath.section):\(indexPath.row)"
+                
+            var data = NSData(contentsOfURL: NSURL.fileURLWithPath(documentsPath + "/" + url)!)
+            cell.imageView?.image = UIImage(data: data!)
+        }
         
         return cell
     }
