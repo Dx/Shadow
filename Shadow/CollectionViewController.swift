@@ -9,9 +9,20 @@
 import UIKit
 import MobileCoreServices
 
-class CollectionViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource, UICollectionViewDelegate {
+@objc
+protocol CenterViewControllerDelegate {
+    optional func toggleLeftPanel()
+    optional func collapseSidePanels()
+}
+
+class CollectionViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource, UICollectionViewDelegate, SidePanelViewControllerDelegate {
+    
+    var delegate: CenterViewControllerDelegate?
     
     @IBOutlet var collectionView: UICollectionView?
+    @IBOutlet weak private var imageView: UIImageView!
+    @IBOutlet weak private var titleLabel: UILabel!
+    
     var beenHereBefore = false
     
     override func viewDidLoad() {
@@ -29,6 +40,17 @@ class CollectionViewController: UIViewController, UICollectionViewDelegateFlowLa
         self.view.addSubview(collectionView!)
         
         self.collectionView?.delegate = self
+    }
+    
+    func menuItemSelected(menuItem: MenuItem) {
+        imageView.image = menuItem.image
+        titleLabel.text = menuItem.title
+        
+        delegate?.collapseSidePanels?()
+    }
+    
+    @IBAction func menuTapped(sender: AnyObject) {
+        delegate?.toggleLeftPanel?()
     }
     
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
