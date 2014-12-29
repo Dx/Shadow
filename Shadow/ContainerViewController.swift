@@ -12,10 +12,9 @@ import QuartzCore
 enum SlideOutState {
     case BothCollapsed
     case LeftPanelExpanded
-    case RightPanelExpanded
 }
 
-class ContainerViewController: UIViewController, CenterViewControllerDelegate, UIGestureRecognizerDelegate {
+class ContainerViewController: UIViewController, CollectionViewControllerDelegate, UIGestureRecognizerDelegate {
     var centerNavigationController: UINavigationController!
     var centerViewController: CollectionViewController!
     
@@ -27,7 +26,6 @@ class ContainerViewController: UIViewController, CenterViewControllerDelegate, U
     }
     
     var leftViewController: SidePanelViewController?
-    var rightViewController: SidePanelViewController?
     
     let centerPanelExpandedOffset: CGFloat = 60
     
@@ -40,6 +38,7 @@ class ContainerViewController: UIViewController, CenterViewControllerDelegate, U
         // wrap the centerViewController in a navigation controller, so we can push views to it
         // and display bar button items in the navigation bar
         centerNavigationController = UINavigationController(rootViewController: centerViewController)
+        
         view.addSubview(centerNavigationController.view)
         addChildViewController(centerNavigationController)
         

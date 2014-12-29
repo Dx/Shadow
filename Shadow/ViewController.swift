@@ -38,7 +38,9 @@ class ViewController: UIViewController {
                 // Check if we passed or failed
                 if success {
                     // User authenticated using Local Device Authentication Successfully!
-                    self.performSegueWithIdentifier("openFirstVC", sender: self)
+                    // self.performSegueWithIdentifier("openFirstVC", sender: self)
+                    var containerVC = ContainerViewController.alloc()
+                    self.presentViewController(containerVC, animated: false, completion: nil)
                     
                 } else {
                     // Unsuccessful
@@ -67,9 +69,6 @@ class ViewController: UIViewController {
                 }
             })
         } else {
-            //            self.performSegueWithIdentifier("openFirstVC", sender: self)
-            // Unable to access local device authentication
-            
             // Set the error title
             alert.title = "Error"
             

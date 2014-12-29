@@ -2,22 +2,22 @@
 //  ViewController.swift
 //  UICollectionView
 //
-//  Created by Brian Coleman on 2014-09-04.
-//  Copyright (c) 2014 Brian Coleman. All rights reserved.
+//  Created by Dx on 2014-12-07.
+//  Copyright (c) 2014 Dx. All rights reserved.
 //
 
 import UIKit
 import MobileCoreServices
 
 @objc
-protocol CenterViewControllerDelegate {
+protocol CollectionViewControllerDelegate {
     optional func toggleLeftPanel()
     optional func collapseSidePanels()
 }
 
 class CollectionViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource, UICollectionViewDelegate, SidePanelViewControllerDelegate {
     
-    var delegate: CenterViewControllerDelegate?
+    var delegate: CollectionViewControllerDelegate?
     
     @IBOutlet var collectionView: UICollectionView?
     @IBOutlet weak private var imageView: UIImageView!
@@ -25,19 +25,14 @@ class CollectionViewController: UIViewController, UICollectionViewDelegateFlowLa
     
     var beenHereBefore = false
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view, typically from a nib.
-        let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
-        layout.sectionInset = UIEdgeInsets(top: 20, left: 10, bottom: 10, right: 10)
-        layout.itemSize = CGSize(width: 90, height: 90)
-//        let endFrame = CGRectMake()
-        collectionView = UICollectionView(frame: self.view.frame, collectionViewLayout: layout)
         collectionView!.dataSource = self
         collectionView!.delegate = self
         collectionView!.registerClass(CollectionViewCell.self, forCellWithReuseIdentifier: "CollectionViewCell")
-        collectionView!.backgroundColor = UIColor.whiteColor()
         self.view.addSubview(collectionView!)
         
         self.collectionView?.delegate = self
@@ -64,7 +59,7 @@ class CollectionViewController: UIViewController, UICollectionViewDelegateFlowLa
     
     func collectionView(collectionView: UICollectionView,
         didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        
+                delegate?.toggleLeftPanel?()
         
             
     }
